@@ -1,7 +1,19 @@
 button {
-  @apply border-4 border-black rounded-xl text-5xl
+  @apply border-4 border-black rounded-xl text-5xl transition-transform duration-100
 }
 
 button:hover {
   @apply bg-black text-white
+}
+
+button:active {
+  @apply scale-105
+}
+
+.btn-selected {
+  @apply bg-black text-white
+}
+
+.btn-selected:hover {
+  @apply bg-white text-black
 }
