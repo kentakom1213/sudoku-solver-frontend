@@ -2,28 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* cell */
+.cell {
+  @apply h-10 w-10 border-2 border-black text-xl flex justify-center items-center
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.cell:hover {
+  @apply bg-black text-white
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* button */
+.btn {
+  @apply border-4 border-black rounded-xl text-5xl transition-transform duration-100
 }
-*/
+
+.btn:hover {
+  @apply bg-black text-white
+}
+
+.btn:active {
+  @apply scale-105
+}
+
+.btn-selected {
+  @apply bg-black text-white
+}
+
+.btn-selected:hover {
+  @apply bg-white text-black
+}

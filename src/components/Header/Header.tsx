@@ -1,11 +1,5 @@
-import { ReactNode } from "react";
-
-const Header = ({ children }: { children: ReactNode }) => {
-  return (
-    <div>
-      {children}
-    </div>
-  );
-};
-
-export default Header;
+export const Header = () => (
+  <div>
+    <h1 className="text-3xl">数独ソルバー</h1>
+  </div>
+);

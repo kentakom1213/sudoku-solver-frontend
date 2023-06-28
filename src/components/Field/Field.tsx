@@ -1,5 +1,4 @@
 import { Cell } from "../Cell/Cell";
-import "./field.css";
 
 export const Field = ({ data }: { data: FieldData }) => {
   let cells = Array.from(data.field.flat().entries())
