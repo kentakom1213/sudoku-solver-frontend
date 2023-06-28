@@ -19,7 +19,7 @@ export const NumberButton1_false = () => <NumberButton num={1} is_selected={fals
 // APIを呼び出すボタン
 export const SubmitButton = (props: any) => {
   return (
-    <Button {...props} className="h-14 w-36 mx-8">
+    <Button {...props} className="confirm-btn">
       Submit
     </Button>
   );
@@ -28,7 +28,7 @@ export const SubmitButton = (props: any) => {
 // 盤面をリセットするボタン
 export const ResetButton = (props: any) => {
   return (
-    <Button {...props} className="h-14 w-36 mx-8">
+    <Button {...props} className="confirm-btn">
       Reset
     </Button>
   );
