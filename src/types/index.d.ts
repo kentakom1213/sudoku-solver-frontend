@@ -8,22 +8,19 @@ type Row = FixedLengthArray<number, 9>;
 // 9x9の固定長配列
 type Field9x9 = FixedLengthArray<Row, 9>;
 
+// 1次元に直されたフィールド
+type Field81 = FixedLengthArray<number, 81>;
+
 // 3x3のブロックの配列
 type Blocks = FixedLengthArray<Row, 9>;
 
 // 盤面
 type FieldData = {
-  field: Field9x9,
+  field: Field81,
 };
 
 // 数独
 type SudokuData = {
   field: FieldData,
   answer: FieldData | undefined,
-};
-
-// Props
-type Props = {
-  problem: FieldData,
-  answer?: FieldData,
 };
