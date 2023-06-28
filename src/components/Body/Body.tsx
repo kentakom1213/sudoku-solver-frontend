@@ -8,7 +8,7 @@ export const Body = () => {
       <div className="flex justify-center">
         <Field data={probrem1}></Field>
       </div>
-      <div className="flex justify-center">
+      <div className="my-10 flex justify-center">
         <ResetButton />
         <SubmitButton />
       </div>
