@@ -4,7 +4,7 @@
 
 /* cell-components */
 .cell {
-  @apply h-12 w-12 m-0.5 border-2 border-black text-3xl flex justify-center items-center
+  @apply h-14 w-14 m-0.5 border-2 rounded border-black text-5xl flex justify-center items-center
 }
 
 .cell:hover {
