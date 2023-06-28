@@ -21,3 +21,9 @@ type SudokuData = {
   field: FieldData,
   answer: FieldData | undefined,
 };
+
+// Props
+type Props = {
+  problem: FieldData,
+  answer?: FieldData,
+};
