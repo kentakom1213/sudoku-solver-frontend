@@ -7,16 +7,25 @@ export default {
 
 // 数字を表示するボタン
 export const NumberButton = ({ num, ...props }: { num: number, props?: any }) => (
-  <Button {...props} className="h-20 w-20 border-4 border-black rounded-2xl text-5xl">
+  <Button {...props} className="h-20 w-20">
     {num}
   </Button>
 );
 
-// 1のボタン（テスト）
+// 数字のボタン
 export const NumberButton1 = () => <NumberButton num={1} />;
-
-// 2のボタン（テスト）
 export const NumberButton2 = () => <NumberButton num={2} />;
+export const NumberButton3 = () => <NumberButton num={3} />;
+export const NumberButton4 = () => <NumberButton num={4} />;
+export const NumberButton5 = () => <NumberButton num={5} />;
+export const NumberButton6 = () => <NumberButton num={6} />;
+export const NumberButton7 = () => <NumberButton num={7} />;
+export const NumberButton8 = () => <NumberButton num={8} />;
+export const NumberButton9 = () => <NumberButton num={9} />;
 
 // APIを呼び出すボタン
-export const EnterButton = () => <Button>Enter</Button>;
+export const EnterButton = (props: any) => (
+  <Button {...props} className="h-20 w-60">
+    Submit
+  </Button>
+);

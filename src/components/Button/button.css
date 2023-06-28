@@ -1,0 +1,7 @@
+button {
+  @apply border-4 border-black rounded-xl text-5xl
+}
+
+button:hover {
+  @apply bg-black text-white
+}

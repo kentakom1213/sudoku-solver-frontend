@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import "./button.css";
 
 const Button = ({ className, children }: { className?: string, children: ReactNode }) => {
   return (
