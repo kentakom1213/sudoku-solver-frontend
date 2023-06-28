@@ -7,7 +7,7 @@ export default {
 
 // 数字を表示するボタン
 export const NumberButton = ({ num, is_selected }: { num: number, is_selected: boolean }) => (
-  <Button className={`h-20 w-20 ${is_selected ? 'btn-selected' : ''}`}>
+  <Button className={`h-14 w-14 ${is_selected ? 'btn-selected' : ''}`}>
     {num}
   </Button>
 );
@@ -17,8 +17,19 @@ export const NumberButton1_true = () => <NumberButton num={1} is_selected={true}
 export const NumberButton1_false = () => <NumberButton num={1} is_selected={false} />;
 
 // APIを呼び出すボタン
-export const EnterButton = (props: any) => (
-  <Button {...props} className="h-20 w-60">
-    Submit
-  </Button>
-);
+export const SubmitButton = (props: any) => {
+  return (
+    <Button {...props} className="h-14 w-36 my-5 mx-8">
+      Submit
+    </Button>
+  );
+};
+
+// 盤面をリセットするボタン
+export const ResetButton = (props: any) => {
+  return (
+    <Button {...props} className="h-14 w-36 my-5 mx-8">
+      Reset
+    </Button>
+  );
+};

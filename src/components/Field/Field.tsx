@@ -4,7 +4,7 @@ export const Field = ({ data }: { data: FieldData }) => {
   let cells = Array.from(data.field.flat().entries())
               .map(([i, d]: [number, number]) => <Cell key={i} num={d} />);
   return (
-    <div className="h-96 w-96 grid grid-cols-9">
+    <div className="h-auto w-auto grid grid-cols-9 border-4 border-black">
       {cells}
     </div>
   );
