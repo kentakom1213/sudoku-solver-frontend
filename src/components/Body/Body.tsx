@@ -1,16 +1,15 @@
-import { probrem1 } from "@/data/dummy";
 import { Field } from "../Field/Field";
 import { ResetButton, SubmitButton } from "../Button/Button.stories";
 
-export const Body = () => {
+export const Body = ({ props }: { props: Props }) => {
   return (
     <div className="container mx-auto">
       <div className="flex justify-center">
-        <Field data={probrem1}></Field>
+        <Field data={props.fieldData} setter={props.setField}></Field>
       </div>
       <div className="flex justify-center">
-        <ResetButton />
-        <SubmitButton />
+        <ResetButton setter={props.setField} />
+        <SubmitButton field={props.fieldData} />
       </div>
     </div>
   );

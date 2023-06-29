@@ -24,3 +24,11 @@ type SudokuData = {
   field: FieldData,
   answer: FieldData | undefined,
 };
+
+// props
+type FieldSetter = (data: FieldData) => void;
+
+type Props = {
+  fieldData: FieldData,
+  setField: FieldSetter,
+}

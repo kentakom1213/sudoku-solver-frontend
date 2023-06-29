@@ -1,6 +1,6 @@
 import { Cell } from "../Cell/Cell";
 
-export const Field = ({ data }: { data: FieldData }) => {
+export const Field = ({ data, setter }: { data: FieldData, setter?: FieldSetter }) => {
   let cells = Array.from(data.field.entries())
               .map(([i, d]: [number, number]) => <Cell key={i} num={d} />);
   return (
