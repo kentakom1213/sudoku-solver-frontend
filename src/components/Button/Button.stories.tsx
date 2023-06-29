@@ -19,7 +19,7 @@ export const NumberButton1_false = () => <NumberButton num={1} is_selected={fals
 // APIを呼び出すボタン
 export const SubmitButton = ({ field }: { field: FieldData }) => {
   return (
-    <Button className="confirm-btn">
+    <Button className="confirm-btn hover:bg-green-600 hover:border-green-600">
       Submit
     </Button>
   );
@@ -42,7 +42,7 @@ export const ResetButton = ({ setter }: { setter: FieldSetter }) => {
   };
 
   return (
-    <Button className="confirm-btn" otherProps={{ onClick: () => setter(zeros) }}>
+    <Button className="confirm-btn hover:bg-red-600 hover:border-red-600" otherProps={{ onClick: () => setter(zeros) }}>
       Reset
     </Button>
   );
