@@ -22,19 +22,9 @@ export const NumberButton1_false = () => <NumberButton num={1} is_selected={fals
 
 // APIを呼び出すボタン
 export const SubmitButton = ({ field, setField }: { field: FieldData, setField: FieldSetter }) => {
-  // 解の情報を保存する
-  let [solvedField, setSolvedField] = useState<FieldData | undefined>(undefined);
-
   let onClick = () => {
     // APIの呼び出し
-    callSolver(field, setSolvedField);
-
-    // フィールドに値を設定
-    if (solvedField?.field) {
-      setField(solvedField);
-    } else {
-      console.log("Cannot solve!");
-    }
+    callSolver(field, setField);
   };
 
   return (

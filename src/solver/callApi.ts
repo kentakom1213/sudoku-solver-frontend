@@ -57,8 +57,6 @@ export const callSolver = (field: FieldData, setSolvedField: FieldSetter) => {
     body: JSON.stringify(fieldToFetch),
   };
 
-  console.log(requestOptions);
-
   fetch(SOLVER_URL, requestOptions)
     .catch((error) => {
       console.error('Error:', error);
