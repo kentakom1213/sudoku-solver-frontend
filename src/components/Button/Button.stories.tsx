@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { callSolver } from "../../solver/callApi";
 import { Button } from "./Button"
 
 export default {
@@ -15,13 +17,28 @@ export const NumberButton = ({ num, is_selected, setNumber }: { num: number, is_
 };
 
 // 数字のボタン（テスト用）
-// export const NumberButton1_true = () => <NumberButton num={1} is_selected={true} />;
-// export const NumberButton1_false = () => <NumberButton num={1} is_selected={false} />;
+export const NumberButton1_true = () => <NumberButton num={1} is_selected={true} setNumber={() => { }} />;
+export const NumberButton1_false = () => <NumberButton num={1} is_selected={false} setNumber={() => { }} />;
 
 // APIを呼び出すボタン
-export const SubmitButton = ({ field }: { field: FieldData }) => {
+export const SubmitButton = ({ field, setField }: { field: FieldData, setField: FieldSetter }) => {
+  // 解の情報を保存する
+  let [solvedField, setSolvedField] = useState<FieldData | undefined>(undefined);
+
+  let onClick = () => {
+    // APIの呼び出し
+    callSolver(field, setSolvedField);
+
+    // フィールドに値を設定
+    if (solvedField?.field) {
+      setField(solvedField);
+    } else {
+      console.log("Cannot solve!");
+    }
+  };
+
   return (
-    <Button className="confirm-btn hover:bg-green-600 hover:border-green-600">
+    <Button className="confirm-btn hover:bg-green-600 hover:border-green-600" otherProps={{ onClick: onClick }}>
       Submit
     </Button>
   );

@@ -9,7 +9,7 @@ export const Body = ({ props }: { props: Props }) => {
       </div>
       <div className="flex justify-center">
         <ResetButton setter={props.setField} />
-        <SubmitButton field={props.fieldData} />
+        <SubmitButton field={props.fieldData} setField={props.setField} />
       </div>
     </div>
   );

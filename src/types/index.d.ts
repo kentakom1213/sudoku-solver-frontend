@@ -1,3 +1,5 @@
+import { type } from "os";
+
 // 固定長配列
 type FixedLengthArray<T, N extends number, A extends any[] = []> =
   A extends { length: N } ? A : FixedLengthArray<T, N, [...A, T]>;
@@ -17,6 +19,11 @@ type Blocks = FixedLengthArray<Row, 9>;
 // 盤面
 type FieldData = {
   field: Field81,
+};
+
+// APIにリクエストするための盤面
+type FieldDataToFetch = {
+  field: Field9x9,
 };
 
 // 数独

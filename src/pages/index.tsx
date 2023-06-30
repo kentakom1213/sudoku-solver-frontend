@@ -1,6 +1,7 @@
 import { GetServerSideProps } from "next";
 import { Layout } from '@/components/Layout/Layout';
 import { useState } from "react";
+import { API_URL } from "@/solver/callApi";
 
 export default function Home() {
   // 初期値
@@ -49,7 +50,7 @@ export default function Home() {
 // ページ読み込み時にAPIサーバーを起こす
 export const getServerSideProps: GetServerSideProps = async () => {
   // ソルバAPIにアクセス
-  const res = await fetch("https://sudoku.shuttleapp.rs");
+  const res = await fetch(API_URL);
 
   console.log(res);
 
