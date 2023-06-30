@@ -13,7 +13,7 @@
 
 /* button-components */
 .btn {
-  @apply border-4 border-black rounded-xl text-2xl sm:text-3xl md:text-4xl transition-transform duration-100
+  @apply border-4 border-black rounded-xl transition-transform duration-100
 }
 
 .btn:hover {
@@ -33,5 +33,5 @@
 }
 
 .confirm-btn {
-  @apply h-11 w-28 sm:h-12 sm:w-32 md:h-14 md:w-36 my-5 mx-4 sm:my-8 md:my-10 sm:mx-8
+  @apply h-11 w-28 sm:h-12 sm:w-32 md:h-14 md:w-36 my-5 mx-4 sm:my-8 md:my-10 sm:mx-8 text-2xl sm:text-3xl md:text-4xl
 }

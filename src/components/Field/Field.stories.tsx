@@ -6,5 +6,5 @@ export default {
   component: Field,
 }
 
-export const SudokuFieldZeros = () => <Field data={zeros} />;
-export const SudokuFieldProb = () => <Field data={probrem1} />;
+export const SudokuFieldZeros = () => <Field data={zeros} setField={(data: FieldData) => { }} />;
+export const SudokuFieldProb = () => <Field data={probrem1} setField={(data: FieldData) => { }} />;

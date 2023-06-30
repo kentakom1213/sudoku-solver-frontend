@@ -6,17 +6,17 @@ export default {
 }
 
 // 数字を表示するボタン
-export const NumberButton = ({ num, is_selected }: { num: number, is_selected: boolean }) => {
+export const NumberButton = ({ num, is_selected, setNumber }: { num: number, is_selected: boolean, setNumber: () => void }) => {
   return (
-    <Button className={`h-10 w-10 sm:h-14 sm:w-14 rounded ${is_selected ? 'btn-selected' : ''}`}>
+    <Button className={`h-16 w-16 sm:h-20 sm:w-20 rounded text-3xl sm:text-5xl ${is_selected ? 'btn-selected' : ''}`} otherProps={{ onClick: setNumber }}>
       {num}
     </Button>
   );
 };
 
 // 数字のボタン（テスト用）
-export const NumberButton1_true = () => <NumberButton num={1} is_selected={true} />;
-export const NumberButton1_false = () => <NumberButton num={1} is_selected={false} />;
+// export const NumberButton1_true = () => <NumberButton num={1} is_selected={true} />;
+// export const NumberButton1_false = () => <NumberButton num={1} is_selected={false} />;
 
 // APIを呼び出すボタン
 export const SubmitButton = ({ field }: { field: FieldData }) => {
