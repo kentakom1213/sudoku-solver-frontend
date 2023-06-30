@@ -5,4 +5,8 @@ export default {
   component: Cell,
 }
 
-export const Cell1 = () => <Cell num={1} />
+export const Cell1 = () => {
+  return (
+    <Cell idx={0} num={1} setShowModal={(s: boolean) => { }} setIdx={(i: number) => { }} />
+  );
+};

@@ -8,7 +8,7 @@ export default {
 
 export const TestModal = () => {
   return (
-    <Modal>
+    <Modal setShowModal={(s: boolean) => {}}>
       <div className="h-40 w-60 p-5 bg-white rounded-2xl">
         テスト用Window
       </div>
@@ -16,9 +16,9 @@ export const TestModal = () => {
   );
 };
 
-export const InputModal = ({ idx, num }: { idx: number, num: number }) => {
+export const InputModal = ({ idx, num, setShowModal }: { idx: number, num: number, setShowModal: (state: boolean) => void }) => {
   return (
-    <Modal>
+    <Modal setShowModal={setShowModal}>
       <div className="h-auto w-auto p-1 sm:p-2 grid grid-cols-3 gap-0.5 sm:gap-1 rounded-xl bg-white">
         <NumberButton num={1} is_selected={num == 1} />
         <NumberButton num={2} is_selected={num == 2} />
