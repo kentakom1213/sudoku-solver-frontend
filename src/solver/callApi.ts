@@ -1,5 +1,4 @@
-// export const API_URL = 'https://sudoku.shuttleapp.rs/solve';
-const SOLVER_URL = 'http://127.0.0.1:8000/solve';
+export const SOLVER_URL = 'https://sudoku.shuttleapp.rs/solve';
 
 const convertToFieldDataToFetch = (field: FieldData): FieldDataToFetch => {
   let field9x9: Field9x9 = [

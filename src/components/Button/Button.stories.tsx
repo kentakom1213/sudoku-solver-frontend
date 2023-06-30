@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { callSolver } from "../../solver/callApi";
+import { callSolver } from "@/solver/callApi";
 import { Button } from "./Button"
 
 export default {
