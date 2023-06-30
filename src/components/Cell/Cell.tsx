@@ -1,7 +1,9 @@
-export const Cell = ({ num }: { num: number }) => {
+import { InputModal } from "../Modal/Modal.stories";
+
+export const Cell = ({ idx, num }: { idx: number, num: number }) => {
   return (
-    <span className="cell">
+    <button className="cell">
       {num == 0 ? ' ' : num}
-    </span>
+    </button>
   );
 };
