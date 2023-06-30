@@ -1,5 +1,3 @@
-import { Field81, Field9x9, FieldData, FieldDataToFetch, FieldSetter } from "@/types";
-
 // export const API_URL = 'https://sudoku.shuttleapp.rs/solve';
 const SOLVER_URL = 'http://127.0.0.1:8000/solve';
 
