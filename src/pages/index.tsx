@@ -1,7 +1,8 @@
 import { GetServerSideProps } from "next";
 import { Layout } from '@/components/Layout/Layout';
 import { useState } from "react";
-import { API_URL } from "@/solver/callApi";
+
+export const API_URL = 'http://127.0.0.1:8000';
 
 export default function Home() {
   // 初期値

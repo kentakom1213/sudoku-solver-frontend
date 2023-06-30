@@ -1,6 +1,7 @@
-import { Field9x9, FieldData, FieldDataToFetch, FieldSetter } from "@/types";
+import { Field81, Field9x9, FieldData, FieldDataToFetch, FieldSetter } from "@/types";
 
-export const API_URL = 'https://sudoku.shuttleapp.rs/solve';
+// export const API_URL = 'https://sudoku.shuttleapp.rs/solve';
+const SOLVER_URL = 'http://127.0.0.1:8000/solve';
 
 const convertToFieldDataToFetch = (field: FieldData): FieldDataToFetch => {
   let field9x9: Field9x9 = [
@@ -25,6 +26,30 @@ const convertToFieldDataToFetch = (field: FieldData): FieldDataToFetch => {
   }
 };
 
+const convertToFieldData = (field: FieldDataToFetch): FieldData => {
+  let field81: Field81 = [
+    0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0,
+  ];
+
+  for (let r = 0; r < 9; r++) {
+    for (let c = 0; c < 9; c++) {
+      field81[r * 9 + c] = field.field[r][c];
+    }
+  }
+
+  return {
+    field: field81,
+  }
+};
+
 export const callSolver = (field: FieldData, setSolvedField: FieldSetter) => {
   // fetch用に変換
   let fieldToFetch = convertToFieldDataToFetch(field);
@@ -37,7 +62,7 @@ export const callSolver = (field: FieldData, setSolvedField: FieldSetter) => {
 
   console.log(requestOptions);
 
-  fetch(API_URL, requestOptions)
+  fetch(SOLVER_URL, requestOptions)
     .catch((error) => {
       console.error('Error:', error);
     })
@@ -45,6 +70,7 @@ export const callSolver = (field: FieldData, setSolvedField: FieldSetter) => {
       response?.json()
     ))
     .then((data) => {
-      setSolvedField(data);
+      let solvedField = convertToFieldData(data);
+      setSolvedField(solvedField);
     });
 };
