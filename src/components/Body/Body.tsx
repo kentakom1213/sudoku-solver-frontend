@@ -5,7 +5,7 @@ export const Body = ({ props }: { props: Props }) => {
   return (
     <div className="container mx-auto">
       <div className="flex justify-center">
-        <Field data={props.fieldData} setter={props.setField}></Field>
+        <Field data={props.fieldData} setField={props.setField}></Field>
       </div>
       <div className="flex justify-center">
         <ResetButton setter={props.setField} />
