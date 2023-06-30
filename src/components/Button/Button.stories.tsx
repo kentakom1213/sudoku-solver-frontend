@@ -6,11 +6,13 @@ export default {
 }
 
 // 数字を表示するボタン
-export const NumberButton = ({ num, is_selected }: { num: number, is_selected: boolean }) => (
-  <Button className={`h-14 w-14 ${is_selected ? 'btn-selected' : ''}`}>
-    {num}
-  </Button>
-);
+export const NumberButton = ({ num, is_selected }: { num: number, is_selected: boolean }) => {
+  return (
+    <Button className={`h-10 w-10 sm:h-14 sm:w-14 rounded ${is_selected ? 'btn-selected' : ''}`}>
+      {num}
+    </Button>
+  );
+};
 
 // 数字のボタン（テスト用）
 export const NumberButton1_true = () => <NumberButton num={1} is_selected={true} />;
