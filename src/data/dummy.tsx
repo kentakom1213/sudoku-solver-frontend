@@ -25,3 +25,12 @@ export const probrem1: FieldData = {
     3, 7, 6, 1, 5, 4, 8, 2, 0
   ]
 };
+
+export const testProps = (data: FieldData): Props => {
+  return {
+    fieldData: data,
+    setField: (_) => {},
+    isError: false,
+    setIsError: (_) => {},
+  }
+};

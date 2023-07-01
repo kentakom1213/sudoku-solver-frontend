@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { Cell } from "../Cell/Cell";
-import { InputModal } from "../Modal/Modal.stories";
+import { ErrorModal, InputModal } from "../Modal/Modal.stories";
 
-export const Field = ({ data, setField }: { data: FieldData, setField: FieldSetter }) => {
+export const Field = ({ props }: { props: Props }) => {
+  // fieldの構成
+  let [fieldData, setField, isError, setIsError] = [props.fieldData, props.setField, props.isError, props.setIsError];
+
   // 編集するセルの位置
   let [idx, setIdx] = useState(0);
 
-  // モーダルの表示
-  let [showModal, setShowModal] = useState(false);
+  // Inputモーダルの表示
+  let [showInputModal, setInputModal] = useState(false);
 
   // 一時的なフィールド
-  let tmpField = data;
+  let tmpField = fieldData;
 
   // セルを編集
   const setNumber = (num: number) => {
@@ -21,8 +24,8 @@ export const Field = ({ data, setField }: { data: FieldData, setField: FieldSett
   };
 
   // 表示するセル
-  let cells = Array.from(data.field.entries())
-    .map(([i, d]: [number, number]) => <Cell key={i} idx={i} num={d} setShowModal={setShowModal} setIdx={setIdx} />);
+  let cells = Array.from(fieldData.field.entries())
+    .map(([i, d]: [number, number]) => <Cell key={i} idx={i} num={d} setShowModal={setInputModal} setIdx={setIdx} />);
 
   return (
     <>
@@ -30,7 +33,10 @@ export const Field = ({ data, setField }: { data: FieldData, setField: FieldSett
         {cells}
       </div>
       {
-        showModal ? <InputModal num={data.field[idx]} setShowModal={setShowModal} setNumber={setNumber} /> : <></>
+        showInputModal ? <InputModal num={fieldData.field[idx]} setShowModal={setInputModal} setNumber={setNumber} /> : <></>
+      }
+      {
+        isError ? <ErrorModal setShowModal={setIsError} /> : <></>
       }
     </>
   );

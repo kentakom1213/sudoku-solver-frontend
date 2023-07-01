@@ -36,4 +36,6 @@ type FieldSetter = (data: FieldData) => void;
 type Props = {
   fieldData: FieldData,
   setField: FieldSetter,
+  isError: boolean,  // フィールドがエラーを含むかどうか
+  setIsError: (state: boolean) => void,
 }

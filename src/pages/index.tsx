@@ -36,11 +36,14 @@ export default function Home() {
 
   // useState
   let [field, setField] = useState<FieldData>(probrem1);
+  let [isError, setIsError] = useState<boolean>(false);
 
   // props
   let props: Props = {
     fieldData: field,
     setField: setField,
+    isError: isError,
+    setIsError: setIsError,
   };
 
   return (

@@ -16,10 +16,24 @@ export const TestModal = () => {
   );
 };
 
+export const ErrorModal = ({ setShowModal }: { setShowModal: (state: boolean) => void }) => {
+  return (
+    <Modal setShowModal={(dummy) => { }}>
+      <div className="h-40 w-60 p-5 rounded-2xl text-center bg-white">
+        <h3 className="mb-1 text-2xl font-bold text-red-600">入力エラー</h3>
+        <p>
+          入力を満たす答えが<br />見つかりませんでした
+        </p>
+        <button className="m-2 py-1 px-5 rounded-lg bg-red-500 hover:bg-red-600 text-white text-lg" onClick={() => setShowModal(false)}>OK</button>
+      </div>
+    </Modal>
+  )
+};
+
 export const InputModal = ({ num, setShowModal, setNumber }: { num: number, setShowModal: (state: boolean) => void, setNumber: (num: number) => void }) => {
   return (
     <Modal setShowModal={setShowModal}>
-      <div className="h-auto w-auto p-1 sm:p-2 grid grid-cols-3 gap-0.5 sm:gap-1 rounded-xl bg-white">
+      <div className="h-auto w-auto p-3 sm:p-5 grid grid-cols-3 gap-1 sm:gap-2 rounded-xl bg-white">
         <NumberButton num={1} is_selected={num == 1} setNumber={() => { num == 1 ? setNumber(0) : setNumber(1) }} />
         <NumberButton num={2} is_selected={num == 2} setNumber={() => { num == 2 ? setNumber(0) : setNumber(2) }} />
         <NumberButton num={3} is_selected={num == 3} setNumber={() => { num == 3 ? setNumber(0) : setNumber(3) }} />

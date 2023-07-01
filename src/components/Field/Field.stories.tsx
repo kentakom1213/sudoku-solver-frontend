@@ -1,4 +1,4 @@
-import { zeros, probrem1 } from "../../data/dummy";
+import { zeros, probrem1, testProps } from "../../data/dummy";
 import { Field } from "./Field";
 
 export default {
@@ -6,5 +6,5 @@ export default {
   component: Field,
 }
 
-export const SudokuFieldZeros = () => <Field data={zeros} setField={(data: FieldData) => { }} />;
-export const SudokuFieldProb = () => <Field data={probrem1} setField={(data: FieldData) => { }} />;
+export const SudokuFieldZeros = () => <Field props={testProps(zeros)} />;
+export const SudokuFieldProb = () => <Field props={testProps(probrem1)} />;

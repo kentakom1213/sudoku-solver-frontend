@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { callSolver } from "@/solver/callApi";
+import { callSolver } from "../../solver/callApi";
 import { Button } from "./Button"
 
 export default {
@@ -21,10 +21,13 @@ export const NumberButton1_true = () => <NumberButton num={1} is_selected={true}
 export const NumberButton1_false = () => <NumberButton num={1} is_selected={false} setNumber={() => { }} />;
 
 // APIを呼び出すボタン
-export const SubmitButton = ({ field, setField }: { field: FieldData, setField: FieldSetter }) => {
+export const SubmitButton = ({ props }: { props: Props }) => {
+  // fieldの構成
+  let [fieldData, setField, isError, setIsError] = [props.fieldData, props.setField, props.isError, props.setIsError];
+
   let onClick = () => {
     // APIの呼び出し
-    callSolver(field, setField);
+    callSolver(fieldData, setField, setIsError);
   };
 
   return (

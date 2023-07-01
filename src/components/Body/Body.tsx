@@ -5,11 +5,11 @@ export const Body = ({ props }: { props: Props }) => {
   return (
     <div className="container mx-auto">
       <div className="flex justify-center">
-        <Field data={props.fieldData} setField={props.setField}></Field>
+        <Field props={props}></Field>
       </div>
       <div className="flex justify-center">
         <ResetButton setter={props.setField} />
-        <SubmitButton field={props.fieldData} setField={props.setField} />
+        <SubmitButton props={props} />
       </div>
     </div>
   );
