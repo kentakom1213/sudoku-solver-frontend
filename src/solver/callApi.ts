@@ -57,17 +57,20 @@ export const callSolver = (field: FieldData, setSolvedField: FieldSetter, setErr
     body: JSON.stringify(fieldToFetch),
   };
 
+  console.log(fieldToFetch);
+
   fetch(SOLVER_URL, requestOptions)
     .catch((error) => {
       console.error('Error:', error);
     })
     .then((response) => {
+      console.log(response);
       // ステータスコードのチェック
       if (!response?.ok) {
         setErrorModal(true);
         return;
       }
-      response?.json()
+      return response?.json();
     })
     .then((data) => {
       if (data === undefined) {
