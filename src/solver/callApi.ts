@@ -47,7 +47,7 @@ const convertToFieldData = (field: FieldDataToFetch): FieldData => {
   }
 };
 
-export const callSolver = (field: FieldData, setSolvedField: FieldSetter, setErrorModal: (state: boolean) => void) => {
+export const callSolver = (field: FieldData, setSolvedField: FieldSetter, setErrorStatus: (state: number) => void) => {
   // fetch用に変換
   let fieldToFetch = convertToFieldDataToFetch(field);
 
@@ -66,8 +66,11 @@ export const callSolver = (field: FieldData, setSolvedField: FieldSetter, setErr
     .then((response) => {
       console.log(response);
       // ステータスコードのチェック
-      if (!response?.ok) {
-        setErrorModal(true);
+      if (response?.status == 400) {
+        setErrorStatus(1);
+        return;
+      } else if (!response?.ok) {
+        setErrorStatus(2);
         return;
       }
       return response?.json();

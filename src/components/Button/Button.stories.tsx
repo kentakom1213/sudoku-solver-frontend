@@ -23,11 +23,11 @@ export const NumberButton1_false = () => <NumberButton num={1} is_selected={fals
 // APIを呼び出すボタン
 export const SubmitButton = ({ props }: { props: Props }) => {
   // fieldの構成
-  let [fieldData, setField, isError, setIsError] = [props.fieldData, props.setField, props.isError, props.setIsError];
+  let [fieldData, setField, errorStatus, setErrorStatus] = [props.fieldData, props.setField, props.errorStatus, props.setErrorStatus];
 
   let onClick = () => {
     // APIの呼び出し
-    callSolver(fieldData, setField, setIsError);
+    callSolver(fieldData, setField, setErrorStatus);
   };
 
   return (

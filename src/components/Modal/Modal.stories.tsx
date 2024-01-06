@@ -16,7 +16,7 @@ export const TestModal = () => {
   );
 };
 
-export const ErrorModal = ({ setShowModal }: { setShowModal: (state: boolean) => void }) => {
+export const InputErrorModal = ({ setShowModal }: { setShowModal: (state: number) => void }) => {
   return (
     <Modal setShowModal={(dummy) => { }}>
       <div className="h-40 w-60 p-5 rounded-2xl text-center bg-white">
@@ -24,7 +24,21 @@ export const ErrorModal = ({ setShowModal }: { setShowModal: (state: boolean) =>
         <p>
           入力を満たす答えが<br />見つかりませんでした
         </p>
-        <button className="m-2 py-1 px-5 rounded-lg bg-red-500 hover:bg-red-600 text-white text-lg" onClick={() => setShowModal(false)}>OK</button>
+        <button className="m-2 py-1 px-5 rounded-lg bg-red-500 hover:bg-red-600 text-white text-lg" onClick={() => setShowModal(0)}>OK</button>
+      </div>
+    </Modal>
+  )
+};
+
+export const ServerErrorModal = ({ setShowModal }: { setShowModal: (state: number) => void }) => {
+  return (
+    <Modal setShowModal={(dummy) => { }}>
+      <div className="h-40 w-60 p-5 rounded-2xl text-center bg-white">
+        <h3 className="mb-1 text-2xl font-bold text-red-600">サーバーエラー</h3>
+        <p>
+          しばらく時間を置いてからお試しください。
+        </p>
+        <button className="m-2 py-1 px-5 rounded-lg bg-red-500 hover:bg-red-600 text-white text-lg" onClick={() => setShowModal(0)}>OK</button>
       </div>
     </Modal>
   )

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Cell } from "../Cell/Cell";
-import { ErrorModal, InputModal } from "../Modal/Modal.stories";
+import { InputErrorModal, ServerErrorModal, InputModal } from "../Modal/Modal.stories";
 
 export const Field = ({ props }: { props: Props }) => {
   // fieldの構成
-  let [fieldData, setField, isError, setIsError] = [props.fieldData, props.setField, props.isError, props.setIsError];
+  let [fieldData, setField, errorStatus, setErrorStatus] = [props.fieldData, props.setField, props.errorStatus, props.setErrorStatus];
 
   // 編集するセルの位置
   let [idx, setIdx] = useState(0);
@@ -36,7 +36,10 @@ export const Field = ({ props }: { props: Props }) => {
         showInputModal ? <InputModal num={fieldData.field[idx]} setShowModal={setInputModal} setNumber={setNumber} /> : <></>
       }
       {
-        isError ? <ErrorModal setShowModal={setIsError} /> : <></>
+        errorStatus == 1 ? <InputErrorModal setShowModal={setErrorStatus} /> : <></>
+      }
+      {
+        errorStatus == 2 ? <ServerErrorModal setShowModal={setErrorStatus} /> : <></>
       }
     </>
   );
