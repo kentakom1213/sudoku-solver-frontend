@@ -30,7 +30,7 @@ export const testProps = (data: FieldData): Props => {
   return {
     fieldData: data,
     setField: (_) => {},
-    isError: false,
-    setIsError: (_) => {},
+    errorStatus: 0,
+    setErrorStatus: (_: number) => {},
   }
 };
